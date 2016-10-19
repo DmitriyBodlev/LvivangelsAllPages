@@ -163,6 +163,13 @@ $(document).ready(function () {
             }
         });
     });
-
+    
+    $('.map-links > li > a').click(function() {
+        var linkClass = $(this).attr('class');
+        console.log(linkClass[9]);
+        $('iframe').hide();
+        $('.iframe-' + linkClass[9]).show();
+    })
+    
     return false;
 });
