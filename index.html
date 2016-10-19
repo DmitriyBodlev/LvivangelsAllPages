@@ -20,11 +20,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="css/reset.css" rel="stylesheet">
     <link href="slick/slick.css" rel="stylesheet">
+    <link href="magnificPopup/dist/magnific-popup.css" rel="stylesheet" >
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/preload.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <div id="page-preloader">
+        <div class='spinner uil-ring-css' style='transform:scale(0.6);'>
+            <div></div>
+        </div>
+    </div>
     <div class="header-contacts">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -42,13 +49,12 @@
                 </a>
             </div>
             <a href="#" id="touch-menu">Меню</a>
-
             <ul class="site-nav right">
                 <li><a class="nav-link-focus" href="#slider">Головна</a></li>
-                <li><a href="pages/events.html">Події</a></li>
-                <li><a href="pages/gallery.html">Фотогалерея</a></li>
-                <li><a href="pages/federation.html">Федерація</a></li>
-                <li class="last"><a href="pages/contacts.html">Контакти</a></li>
+                <li><a href="events.html">Події</a></li>
+                <li><a href="gallery.html">Фотогалерея</a></li>
+                <li><a href="federation.html">Федерація</a></li>
+                <li class="last"><a href="contacts.html">Контакти</a></li>
             </ul>
         </div>
     </header>
@@ -73,16 +79,12 @@
     </div>
 
 
-
-
     <div id="about" class="about">
         <h1 class="title">Черліденг</h1>
         <div class="row">
             <div class="row">
                 <div class="video col-md-6 col-md-offset-3">
-                    <video controls="controls" poster="img/poster.jpg">
-                        <source src="video/LvivAngelsSchoolPromo.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> Тег video не підтримується вашим браузером.
-                    </video>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FJBwl-T0Hu0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="row about-info">
@@ -233,7 +235,7 @@
 
 
             <p class="toall-link">
-                <a href="pages/events.html">Перейти до всіх подій</a>
+                <a href="events.html">Перейти до всіх подій</a>
             </p>
             </div>
 
@@ -245,40 +247,21 @@
     <div id="gallery" class="clearfix">
         <h1 class="title">Фотогалерея</h1>
         <div class="row">
-            <div class="photos col-xs-12">
+            <div class="photos photos-main popup-gallery col-xs-12">
 
             </div>
         </div>
         <p class="toall-link">
-            <a href="pages/gallery.html">Перейти до всіх фото</a>
+            <a href="gallery.html">Перейти до всіх фото</a>
         </p>
     </div>
     <!--end of #gallery-->
 
-    <!--SLIDER-->
-    <div id="gallery-content">
-        <div class="photo-wrap">
-
-        </div>
-        <div class="photo-left">
-            <img src="img/gallery/left.png" alt="">
-        </div>
-        <div class="photo-right">
-            <img src="img/gallery/right.png" alt="">
-        </div>
-
-        <div class="open-photo">
-
-        </div>
-    </div>
-
 
     <div id="info" class="clearfix">
-        <div class="title">Федерація</div>
+        <div class="title">Наші досягнення</div>
         <div id="federation-content" class="row">
-
             <div class="info-item col-md-12">
-                <h2>Наші досягнення</h2>
                 <div class="info-open row">
                     <div class="success-item row">
                         <div class="success-img col-md-4 col-sm-6">
@@ -289,7 +272,6 @@
                             <p>Возняк Тетяна та Кручок Анна-Марія посіли третє місце у складі збірної України з черліденгу на Чемпіонаті Європи у місті Любляни. Номінація "чер-данс-джаз-команда".</p>
                         </div>
                     </div>
-                    <!--end of sucess-item-->
 
                     <div class="success-item row">
                         <div class="success-img col-md-4 col-sm-6">
@@ -299,17 +281,12 @@
                             <h3 class="title2">Переможці Чемпіонату України</h3>
                             <p>Вусатюк Вікторія та Гребінка Емма посіли перше місце на Чемпіонаті України, який відбувся 5-6 березня у місті Дніпроджержинськ. Номінація "чер-данс-джаз-дует" серед дітей 8-12 років.</p>
                         </div>
-
-
                     </div>
-                    <!--end of sucess-item-->
-
-
                 </div>
             </div>
 
             <p class="toall-link">
-                <a href="pages/federation.html">Перейти до всієї інформації</a>
+                <a href="federation.html">Перейти до всієї інформації</a>
             </p>
         </div>
         <!--end of #federation-content-->
@@ -319,14 +296,6 @@
     <!--end of info-->
 
 
-    <!--
-    <div class="maps row">
-       <div class="col-md-12">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.0956750941828!2d23.980711315271765!3d49.80306894168003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae7a66c41ec7f%3A0xee53a3c17c425a29!2z0LLRg9C7LiDQhtCy0LDQvdCwINCf0YPQu9GO0Y8sIDE2LCDQm9GM0LLRltCyLCDQm9GM0LLRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0Yw!5e0!3m2!1suk!2sua!4v1465361573999" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </div>
--->
-
     <footer class="row">
 
             <div class="footer-item col-md-4 col-sm-4">
@@ -334,7 +303,7 @@
                 <p><a class="transition" target="_blank
 " href="https://www.google.com.ua/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%86%D0%B2%D0%B0%D0%BD%D0%B0+%D0%9F%D1%83%D0%BB%D1%8E%D1%8F,+16,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/@49.803066,23.9807113,17z/data=!3m1!4b1!4m5!3m4!1s0x473ae7a66c6da7af:0xb59c1e5447cf3a40!8m2!3d49.803066!4d23.9829?hl=uk">Вул. Пулюя 16, СЗШ №83</a></p>
                 <p><a class="transition" target="_blank" href="https://www.google.com.ua/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%97%D0%B0%D0%BC%D0%BA%D0%BD%D0%B5%D0%BD%D0%B0,+8,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/@49.8402245,24.0130093,17z/data=!3m1!4b1!4m5!3m4!1s0x473add771c3e2be1:0x1226856cd09855e2!8m2!3d49.8402245!4d24.015198?hl=uk">Вул.Замкнена 8, СШ№34</a></p>
-                <p><a class="transition" target="" href="pages/contacts.html">Інші відділення ...</a></p>
+                <p><a class="transition" target="" href="contacts.html">Інші відділення ...</a></p>
             </div>
 
             <div class="footer-item col-md-4 col-sm-4">
@@ -359,6 +328,6 @@
     <script defer src="slick/slick.min.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/xGallerify-master/dist/jquery.xgallerify.js"></script>
+    <script defer src="magnificPopup/dist/jquery.magnific-popup.js"></script>
 </body>
-
 </html>

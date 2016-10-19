@@ -65,7 +65,7 @@ a.nav-link-focus:after,
 .site-nav a:hover:after{
     content: ' ';
     position: absolute;
-    bottom: -20px;
+    bottom: -22px;
     left: 0;
     right: 0;
     display: block;
@@ -244,7 +244,7 @@ a.nav-link-focus:after,
 /*********************NEWS*******************/
 
 .news {
-    margin-bottom: 50px;
+    margin: 120px 0 50px;
 }
 
 .news-item {
@@ -332,25 +332,8 @@ a.nav-link-focus:after,
 
 /***********************GALLERY**********************/
 
-#gallery {
+.gallery {
     margin-bottom: 50px;
-}
-
-#gallery .photo {
-    margin-bottom: 7px;
-    padding: 5px;
-    height: 320px;
-    text-align: center;
-    cursor: pointer;
-}
-
-#gallery div img {
-    width: 100%;
-    height: auto;
-}
-
-.gallery-small-img img {
-    height: 100%;
 }
 .toall-link {
     
@@ -361,81 +344,10 @@ a.nav-link-focus:after,
     color: #f65358;
     text-decoration: underline;
 }
-
-div .photo:hover {}
-
-#gallery-content {
-    z-index: 2;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding-top: 100px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+.mfp-title,
+.mfp-title small {
+    color: transparent;
 }
-
-.open-photo {
-    text-align: center;
-    width: auto;
-}
-
-#gallery-content div img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.photo-left {
-    z-index: auto;
-    position: absolute;
-    width: 100px;
-}
-
-.photo-right {
-    z-index: auto;
-    position: absolute;
-    right: 0;
-    width: 500px;
-}
-
-.photo-wrap {
-    z-index: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.photo-right,
-.photo-left {
-    /*    opacity: 0.5;*/
-}
-
-.photo-right img,
-.photo-left img {
-    z-index: auto;
-    position: absolute;
-    top: 40%;
-    cursor: pointer;
-}
-
-.photo-right img {
-    right: -40px;
-}
-
-.photo-left img {
-    left: -40px;
-}
-
-.photo-right img:hover,
-.photo-left img:hover {
-    opacity: 0.8;
-}
-
 
 /********************INFO(FEDERATION)*************/
 
@@ -449,7 +361,7 @@ div .photo:hover {}
 
 .info-item {
     height: auto;
-    padding: 25px 0;
+    padding: 0;
     font-size: 32px;
     text-align: center;
     cursor: pointer;
@@ -457,7 +369,6 @@ div .photo:hover {}
 
 .info-open {
     width: 100%;
-    padding-top: 20px;
     color: #888888;
     font-size: 14px;
     font-family: 'Open Sans', arial;

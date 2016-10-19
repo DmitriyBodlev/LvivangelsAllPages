@@ -1,3 +1,11 @@
+$(window).on('load', function () {
+    var $preloader = $('#page-preloader'),
+        $spinner   = $preloader.find('.spinner');
+    $spinner.fadeOut();
+    $preloader.delay(350).fadeOut('slow');
+    
+});
+
 $(document).ready(function () {
 
     //Меню навігації
@@ -49,14 +57,7 @@ $(document).ready(function () {
         if($(this).hasClass('nav-link-focus')) return;
         $(this).addClass('nav-link-focus');
     })
-//    //Анімаційний рух по сайту
-//    $('a[href*=#]').bind("click", function (e) {
-//        var anchor = $(this);
-//        $('html, body').stop().animate({
-//            scrollTop: $(anchor.attr('href')).offset().top - 120
-//        }, 1000);
-//        e.preventDefault();
-//    });
+
 
     //Новини
     $(".news-item").click(function () {
@@ -68,137 +69,8 @@ $(document).ready(function () {
         }
     })
 
+
     //Галерея
-    $(".photo").click(function () {
-        $(this).addClass("current-photo")
-        var galleryContent = $(".current-photo").html();
-        var openPhotoContent = $(".open-photo").html();
-        $(".open-photo").html(galleryContent);
-        $("#gallery-content").show();
-
-    })
-
-    $(".photo-right").click(function () {
-        if ($(".current-photo").is(".photo:last")) {
-            $(".photo:first").addClass("current-photo");
-            $(".photo:last").removeClass("current-photo");
-        } else {
-            $(".current-photo").next().addClass("current-photo");
-            $(".current-photo:first").removeClass("current-photo");
-        }
-        var galleryContent = $(".current-photo").html();
-        $(".open-photo").html(galleryContent);
-    })
-    $(".photo-left").click(function () {
-        if ($(".current-photo").is(".photo:first")) {
-            $(".photo:last").addClass("current-photo");
-            $(".photo:first").removeClass("current-photo");
-        } else {
-            $(".current-photo").prev().addClass("current-photo");
-            $(".current-photo:last").removeClass("current-photo");
-        }
-        var galleryContent = $(".current-photo").html();
-        $(".open-photo").html(galleryContent);
-    })
-
-    $(".photo-wrap").not(".open-photo").click(function () {
-        $("#gallery-content").hide();
-        $(".current-photo").removeClass("current-photo");
-    })
-
-    function buttonsMarg() {
-        var htmlWidth = $("html").width() - 605;
-        if (htmlWidth > 0) {
-            var photoMarg = htmlWidth / 2;
-
-        } else {
-            var photoMarg = 0;
-        }
-        var buttonsHeight = $(".open-photo").height();
-        $(".photo-right").css({
-            "margin-right": photoMarg
-        });
-        $(".photo-right").css({
-            "height": buttonsHeight
-        });
-        $(".photo-left").css({
-            "margin-left": photoMarg
-        });
-        $(".photo-left").css({
-            "height": buttonsHeight
-        });
-
-        setTimeout(buttonsMarg, 0);
-        //console.log(some);
-    }
-    buttonsMarg();
-
-    function galleryPadding() {
-        var htmlWidth = $("html").width();
-        if (htmlWidth <= 768) {
-            $("#gallery-content").css({
-                "padding-top": "50%"
-            });
-        } else {
-            $("#gallery-content").css({
-                "padding-top": "120px"
-            });
-        }
-        setTimeout(galleryPadding, 0)
-    }
-    galleryPadding();
-
-
-
-
-//    //Інформація
-//    //Відкриття історії в залежності від ширини екрану
-//    if ($("html").width() < 975) {
-//        $("#federation-content > div:first-child").addClass("activeInfo")
-//        $(".activeInfo").find(".info-open").show();
-//    } else {
-//        $("#federation-content > div:first-child").addClass("active")
-//        var infoContent = $(".active").find(".info-open").html();
-//        $("#info-content").html(infoContent).show();
-//    }
-//    //Івент клік для закриття/відкриття інформації
-//    $(".info-item").click(function () {
-//            if ($("html").width() < 975) {
-//                $(this).find(".info-open").slideToggle();
-//                if ($(this).hasClass("activeInfo")) {
-//                    $(".activeInfo").removeClass("activeInfo");
-//                } else {
-//                    $(this).addClass("activeInfo");
-//                }
-//            } else {
-//                if ($(this).hasClass("active")) {
-//                    $(".active").removeClass("active");
-//                    $("#info-content").hide();
-//                } else {
-//                    var infoContent = $(this).find(".info-open").html();
-//                    $(".active").removeClass("active");
-//                    $(this).addClass("active");
-//                    $("#info-content").html(infoContent).show();
-//                }
-//            }
-//        })
-//        //Автоматичне закриття інформаціі при зменьшенні/збільшенні ширини екрану
-//    function lookWidthForInf() {
-//        var htmlWidth = $("html").width();
-//        if (htmlWidth < 975) {
-//            $(".active").removeClass("active");
-//            $("#info-content").hide();
-//        } else {
-//            $(".activeInfo").find(".info-open").hide();
-//            $(".activeInfo").removeClass("activeInfo");
-//        }
-//
-//        setTimeout(lookWidthForInf, 0);
-//        //console.log(some);
-//    }
-//    lookWidthForInf();
-
-
     $('.slick').slick({
         infinite: true,
         speed: 300,
@@ -233,6 +105,7 @@ $(document).ready(function () {
       ]
     });
     
+
     var gallery = $('.photos').gallerify({
     margin:5,
     mode:{
@@ -253,39 +126,43 @@ $(document).ready(function () {
             }
         ]
     },
-    lastRow:'adjust'
+        lastRow:'adjust'
     }); 
     for(i = 1; i < 12; i++) {
-        $('.photos').append('<img src="img/gallery/big/'+i+'.jpg">');
+        $('.photos-main').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
     }
+    for(i = 12; i < 24; i++) {
+        $('.photos-gallery-first').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    }
+    for(i = 24; i < 36; i++) {
+        $('.photos-gallery-second').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    }
+    for(i = 36; i < 44; i++) {
+        $('.photos-gallery-third').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    }
+    $('.photos').gallerify.renderAsyncImages();
 
-    $('.main-gallery').gallerify.renderAsyncImages();
-    var gallery = $('.main-gallery').gallerify({
-    margin:5,
-    mode:{
-        maxHeight: screen.height * 0.5,
-        breakPoints:[
-            {
-                minWidth: 1170,
-                columns: 4,
-            },{
-                minWidth: 970,
-                columns: 3,
-            },{
-                minWidth: 750,
-                columns: 2,
-            },{
-                maxWidth: 750,
-                columns: 1,
+
+
+    $(document).ready(function () {
+        $('.popup-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                titleSrc: function (item) {
+                    return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                }
             }
-        ]
-    },
-    lastRow:'adjust'
-    }); 
-    for(i = 1; i < 12; i++) {
-        $('.main-gallery').append('<img src="../img/gallery/big/'+i+'.jpg">');
-    }
+        });
+    });
 
-    $('.main-gallery').gallerify.renderAsyncImages();
     return false;
 });
