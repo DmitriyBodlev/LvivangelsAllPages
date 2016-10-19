@@ -1,3 +1,6 @@
+.transition {
+    transition: all ease 0.5s;
+}
 body {
     margin-top: 90px;
 }
@@ -331,16 +334,28 @@ a.nav-link-focus:after,
 
 
 /***********************GALLERY**********************/
-
-.gallery {
-    margin-bottom: 50px;
+.gallery-top {
+    border-top: 1px solid transparent;
+}
+.gallery-title {
+    display: inline-block;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 48px;
+    color: #777;
+    border-bottom: 2px solid #777;
 }
 .toall-link {
-    
     text-align: right;
 }
 .toall-link a {
     padding: 20px 15px 0 0;
+    color: #A8393D;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.toall-link a:hover {
     color: #f65358;
     text-decoration: underline;
 }

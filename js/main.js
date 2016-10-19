@@ -128,17 +128,20 @@ $(document).ready(function () {
     },
         lastRow:'adjust'
     }); 
-    for(i = 1; i < 12; i++) {
+    for(i = 1; i <= 8; i++) {
         $('.photos-main').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
     }
-    for(i = 12; i < 24; i++) {
-        $('.photos-gallery-first').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    for(i = 1; i <= 15; i++) {
+        $('.photos-gallery-1').append('<a href="img/gallery/competitions/'+i+'.jpg"><img src="img/gallery/competitions/'+i+'.jpg"></a>');
     }
-    for(i = 24; i < 36; i++) {
-        $('.photos-gallery-second').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    for(i = 1; i <= 12; i++) {
+        $('.photos-gallery-2').append('<a href="img/gallery/gathering/'+i+'.jpg"><img src="img/gallery/gathering/'+i+'.jpg"></a>');
     }
-    for(i = 36; i < 44; i++) {
-        $('.photos-gallery-third').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
+    for(i = 1; i <= 7; i++) {
+        $('.photos-gallery-3').append('<a href="img/gallery/training/'+i+'.jpg"><img src="img/gallery/training/'+i+'.jpg"></a>');
+    }
+    for(i = 1; i <= 9; i++) {
+        $('.photos-gallery-4').append('<a href="img/gallery/events/'+i+'.jpg"><img src="img/gallery/events/'+i+'.jpg"></a>');
     }
     $('.photos').gallerify.renderAsyncImages();
 
