@@ -247,9 +247,11 @@ a.nav-link-focus:after,
 /*********************NEWS*******************/
 
 .news {
+    margin: 0 0 50px;
+}
+.news-in-page {
     margin: 120px 0 50px;
 }
-
 .news-item {
     height: auto;
 }
