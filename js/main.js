@@ -52,6 +52,14 @@ $(document).ready(function () {
     }
     sliderHeight();
 
+    //Анімаційний рух по сайту
+    $('a[href*=#]').bind("click", function (e) {
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 120
+        }, 1000);
+        e.preventDefault();
+    });
 
     $('site-nav a').click(function() {
         if($(this).hasClass('nav-link-focus')) return;
@@ -131,7 +139,7 @@ $(document).ready(function () {
     for(i = 1; i <= 8; i++) {
         $('.photos-main').append('<a href="img/gallery/big/'+i+'.jpg"><img src="img/gallery/big/'+i+'.jpg"></a>');
     }
-    for(i = 1; i <= 15; i++) {
+    for(i = 1; i <= 27; i++) {
         $('.photos-gallery-1').append('<a href="img/gallery/competitions/'+i+'.jpg"><img src="img/gallery/competitions/'+i+'.jpg"></a>');
     }
     for(i = 1; i <= 12; i++) {
@@ -168,8 +176,9 @@ $(document).ready(function () {
     });
     
     $('.map-links > li > a').click(function() {
+        $('.map-links > li > a').removeClass('active-map');
+        $(this).addClass('active-map')
         var linkClass = $(this).attr('class');
-        console.log(linkClass[9]);
         $('iframe').hide();
         $('.iframe-' + linkClass[9]).show();
     })

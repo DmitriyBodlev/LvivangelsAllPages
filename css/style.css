@@ -50,7 +50,6 @@ header {
 }
 
 .site-nav a {
-    /*display: inline-block;*/
     position: relative;
     /*height: 59px;*/
     color: #fff;
@@ -73,11 +72,9 @@ a.nav-link-focus {
     bottom: -22px;
     left: 0;
     width: 0%;
-    /*right: 0;*/
     display: block;
     height: 3px;
     background-color: #f65358;
-    /*opacity: 0;*/
     transition: all ease 0.5s;
 }
 a.nav-link-focus:after,
@@ -391,27 +388,18 @@ iframe {
     padding: 0;
     font-size: 32px;
     text-align: center;
-    cursor: pointer;
 }
 
 .info-open {
-    width: 100%;
     color: #888888;
     font-size: 14px;
     font-family: 'Open Sans', arial;
-    font-weight: normal;
     background: #fff;
     text-align: justify;
 }
 
 .info-open p {
     font-size: 14px;
-}
-
-#info-content {
-    width: 100%;
-    display: none;
-    background-color: #fff;
 }
 
 .activeInfo,
@@ -429,8 +417,7 @@ iframe {
 }
 
 .leadership-item {
-    float: left;
-    width: 50%;
+    text-align: center;
     margin-bottom: 15px;
 }
 
@@ -440,14 +427,16 @@ iframe {
 }
 
 .title2 {
-    margin-bottom: 5px;
+    margin: 5px auto;
     font-size: 18px;
     font-weight: bold;
 }
 
 .leadership-img {
-    margin-right: 15px;
-    float: left;
+    text-align: center;
+}
+.leadership-img img {
+    width: 170px;
 }
 
 .success-item {
@@ -536,7 +525,8 @@ footer {
     letter-spacing: 0.5px;
     cursor: pointer;
 }
-.map-links a:hover {
+.map-links a:hover,
+.active-map {
     border-bottom: 1px solid #999;
 }
 .map-links p {
@@ -646,29 +636,6 @@ iframe:first-child {
 
 /******************Media Queries****************/
 
-@media (max-width: 1680px) {
-    #gallery .photo {
-        height: 280px;
-    }
-}
-@media (max-width: 1441px) {
-    #gallery .photo {
-        height: 240px;
-    }
-}
-@media (max-width: 1366px) {
-    #gallery .photo {
-        height: 225px;
-    }
-}
-/*
-@media (max-width: 1200px) {
-    #gallery .photo {
-        height: 195px;
-    }
-}
-*/
-
 @media (max-width: 992px) {
     #slider h1 {
         margin-bottom: 15px;
@@ -705,16 +672,13 @@ iframe:first-child {
         width: 100%;
         float: none;
     }
-    .leadership-item {
-        text-align: center;
-    }
-    .leadership-img {
+    /*.leadership-img {
         width: 100%;
-    }
-    .leadership-item {
+    }*/
+    /*.leadership-item {
         float: left;
         text-align: center;
-    }
+    }*/
     .leadership-item p {
         padding: 0 7px 0 7px;
     }
@@ -740,6 +704,10 @@ iframe:first-child {
 /* Планшети */
 
 @media (max-width: 768px) {
+    #page-preloader .spinner {
+        left: 38%;
+        top: 40%;
+    }
     .wrapper {
         width: 100%;
     }
@@ -803,9 +771,6 @@ iframe:first-child {
         height: auto;
         margin: 10px auto 20px;
     }
-    #gallery-content {
-        margin: 0 auto;
-    }
     #contact {
         padding: 15px;
     }
@@ -816,19 +781,23 @@ iframe:first-child {
     }
 }
 
-@media (max-width: 720px) {
-    .photo-left img {
-        left: 10px;
-    }
-    .photo-right img {
-        right: 10px;
-    }
-}
-
 
 /******** Смартфони *********/
 
 @media (max-width: 675px) {
+    #slider {
+        margin-bottom: 10px;
+    }
+    .nav-link-focus:after,
+    .site-nav a:after {
+        display: none;
+    }
+    .title {
+        margin: 20px auto 20px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
     .news p {
         font-size: 13px;
     }
@@ -845,16 +814,6 @@ iframe:first-child {
     .contact-item {
         width: 100%;
         float: none;
-    }
-    .photo-left {
-        width: 17%;
-    }
-    .photo-right {
-        width: 83%;
-    }
-    .photo-right img,
-    .photo-left img {
-        top: 45%;
     }
     .success-img img {
         width: 80%;
@@ -908,9 +867,6 @@ iframe:first-child {
     }
     #gallery .photo {
         height: 300px;
-    }
-    .leadership-item {
-        width: 100%;
     }
     .info-item h2 {
         font-size: 20px;
